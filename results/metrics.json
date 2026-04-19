@@ -1,0 +1,12 @@
+{
+  "num_cases": 6,
+  "tp": 3,
+  "fp": 1,
+  "fn": 0,
+  "tn": 2,
+  "precision_inconsistent": 0.75,
+  "recall_inconsistent": 1.0,
+  "accuracy": 0.833,
+  "false_positive_rate": 0.333,
+  "abstain_rate": 0.0
+}

@@ -1,0 +1,105 @@
+[
+  {
+    "prediction": "consistent",
+    "confidence": 0.95,
+    "rubric_criteria_used": [
+      "Functional correctness",
+      "Handling of case/spaces/punctuation",
+      "Time complexity explanation",
+      "Clarity/examples/tests"
+    ],
+    "answer_evidence": [
+      "def is_palindrome(s):\\n    filtered = ''.join(ch.lower() for ch in s if ch.isalnum())\\n    return filtered == filtered[::-1]",
+      "This removes punctuation/spaces and lowercases everything. Time complexity is O(n). Example: 'A man, a plan, a canal: Panama' returns True."
+    ],
+    "reasoning_summary": "The student's answer correctly implements the palindrome check, handles case, spaces, and punctuation, explains O(n) time complexity, and provides a clear example, satisfying all rubric criteria for full credit.",
+    "draft_review_note": "",
+    "case_id": "case_01",
+    "ground_truth_label": "consistent",
+    "ta_score": 10,
+    "max_score": 10
+  },
+  {
+    "prediction": "inconsistent",
+    "confidence": 0.9,
+    "rubric_criteria_used": [
+      "Handling of case/spaces/punctuation"
+    ],
+    "answer_evidence": [
+      "filtered = ''.join(ch.lower() for ch in s if ch.isalnum())"
+    ],
+    "reasoning_summary": "The student's code filters to alphanumeric characters and lowercases them, correctly ignoring case, spaces, and punctuation. The TA's feedback claims the student did not handle punctuation or spaces correctly, which contradicts the evident solution.",
+    "draft_review_note": "The TA's feedback incorrectly states that punctuation and spaces were not handled, while the student's solution uses ch.isalnum() to exclude them and lowercases for case insensitivity. This misjudgment likely led to an unnecessary point deduction. Please review the solution against the rubric criteria for handling case, spaces, and punctuation.",
+    "case_id": "case_02",
+    "ground_truth_label": "inconsistent",
+    "ta_score": 7,
+    "max_score": 10
+  },
+  {
+    "prediction": "abstain",
+    "confidence": 0.0,
+    "rubric_criteria_used": [
+      "Handling of case/spaces/punctuation",
+      "Functional correctness"
+    ],
+    "answer_evidence": [
+      "def is_palindrome(s):\\n    s = s.lower().replace(' ', '')\\n    return s == s[::-1]"
+    ],
+    "reasoning_summary": "The TA correctly noted the missing punctuation handling, which aligns with the rubric. The score of 7/10 could reflect deductions for that and possibly other minor issues, but the exact rubric point allocation is unclear, making a definitive judgment difficult.",
+    "draft_review_note": "",
+    "case_id": "case_03",
+    "ground_truth_label": "consistent",
+    "ta_score": 7,
+    "max_score": 10
+  },
+  {
+    "prediction": "inconsistent",
+    "confidence": 0.9,
+    "rubric_criteria_used": [
+      "Time complexity explanation"
+    ],
+    "answer_evidence": [
+      "Time complexity is O(1) because Python string slicing is fast."
+    ],
+    "reasoning_summary": "The TA marked the answer as fully correct, but the student's time complexity claim of O(1) is inaccurate; the algorithm runs in O(n) time due to filtering and string reversal, which violates the rubric's expectation for a correct complexity explanation.",
+    "draft_review_note": "The TA's feedback overlooks an error in the student's time complexity analysis. While the function implementation is correct, the complexity claim should be O(n), not O(1). Please adjust the feedback and score accordingly.",
+    "case_id": "case_04",
+    "ground_truth_label": "inconsistent",
+    "ta_score": 10,
+    "max_score": 10
+  },
+  {
+    "prediction": "inconsistent",
+    "confidence": 0.82,
+    "rubric_criteria_used": [
+      "Time complexity explanation",
+      "Clarity/examples/tests"
+    ],
+    "answer_evidence": [
+      "def is_palindrome(s):\n    filtered = ''.join(ch.lower() for ch in s if ch.isalnum())\n    return filtered == filtered[::-1]"
+    ],
+    "reasoning_summary": "The student's code is correct but provides no time complexity explanation or example, which according to the rubric should lose 4 points (2 each). The TA's feedback cites missing explanation and example yet awarded 8/10, implying only a 2‑point deduction, which conflicts with the rubric's point allocation.",
+    "draft_review_note": "The TA correctly identified missing explanation and example, but the score does not reflect the full point deduction specified in the rubric for those missing elements. Please adjust the score to align with the rubric or clarify the partial credit reasoning.",
+    "case_id": "case_05",
+    "ground_truth_label": "consistent",
+    "ta_score": 8,
+    "max_score": 10
+  },
+  {
+    "prediction": "inconsistent",
+    "confidence": 0.9,
+    "rubric_criteria_used": [
+      "Handling of case/spaces/punctuation",
+      "Clarity/examples/tests"
+    ],
+    "answer_evidence": [
+      "cleaned = ''.join(ch.lower() for ch in s if ch.isalnum())"
+    ],
+    "reasoning_summary": "The TA states punctuation handling is unclear, but the student's code explicitly removes non‑alphanumeric characters, which includes punctuation and spaces, demonstrating correct handling. Therefore the feedback contradicts the evident solution.",
+    "draft_review_note": "The TA's comment about unclear punctuation handling does not match the student's code, which uses ch.isalnum() to filter out punctuation and spaces. Consider revising the feedback to reflect that this requirement is satisfied.",
+    "case_id": "case_06",
+    "ground_truth_label": "inconsistent",
+    "ta_score": 6,
+    "max_score": 10
+  }
+]
