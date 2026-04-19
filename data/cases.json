@@ -1,0 +1,13 @@
+[
+  {
+    "case_id": "case_01",
+    "question": "Implement a function to check whether a string is a palindrome and analyze its time complexity.",
+    "rubric": "See shared rubric file or paste rubric here if needed.",
+    "student_answer": "Use two pointers from both ends ... Handles empty string and single character cases ... Time complexity is O(n).",
+    "ta_score": 7,
+    "max_score": 10,
+    "ta_feedback": "Good overall, but missing discussion of edge cases.",
+    "ground_truth_label": "inconsistent",
+    "notes": "TA says edge cases missing, but answer explicitly mentions them."
+  }
+]
