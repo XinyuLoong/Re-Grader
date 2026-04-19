@@ -1,13 +1,68 @@
 [
   {
     "case_id": "case_01",
-    "question": "Implement a function to check whether a string is a palindrome and analyze its time complexity.",
-    "rubric": "See shared rubric file or paste rubric here if needed.",
-    "student_answer": "Use two pointers from both ends ... Handles empty string and single character cases ... Time complexity is O(n).",
+    "question": "Write a Python function is_palindrome(s: str) -> bool that ignores case, spaces, and punctuation. Briefly explain time complexity and include at least one example.",
+    "rubric": "Functional correctness 4; Handling of case/spaces/punctuation 2; Time complexity explanation 2; Clarity/examples/tests 2.",
+    "student_answer": "def is_palindrome(s):\n    filtered = ''.join(ch.lower() for ch in s if ch.isalnum())\n    return filtered == filtered[::-1]\n\nThis removes punctuation/spaces and lowercases everything. Time complexity is O(n). Example: 'A man, a plan, a canal: Panama' returns True.",
+    "ta_score": 10,
+    "max_score": 10,
+    "ta_feedback": "Excellent work. Logic is correct, normalization is handled, complexity explanation is correct, and an example is included.",
+    "ground_truth_label": "consistent",
+    "ground_truth_reason": "The grade and feedback align with the rubric."
+  },
+  {
+    "case_id": "case_02",
+    "question": "Write a Python function is_palindrome(s: str) -> bool that ignores case, spaces, and punctuation. Briefly explain time complexity and include at least one example.",
+    "rubric": "Functional correctness 4; Handling of case/spaces/punctuation 2; Time complexity explanation 2; Clarity/examples/tests 2.",
+    "student_answer": "def is_palindrome(s):\n    filtered = ''.join(ch.lower() for ch in s if ch.isalnum())\n    return filtered == filtered[::-1]\n\nThis ignores uppercase/lowercase differences and removes punctuation and spaces. Time complexity is O(n). Example: 'Race car!' returns True.",
     "ta_score": 7,
     "max_score": 10,
-    "ta_feedback": "Good overall, but missing discussion of edge cases.",
+    "ta_feedback": "Good start, but you did not handle punctuation or spaces correctly, so I deducted 3 points.",
     "ground_truth_label": "inconsistent",
-    "notes": "TA says edge cases missing, but answer explicitly mentions them."
+    "ground_truth_reason": "The student's code explicitly removes non-alphanumeric characters and lowercases characters, so the deduction is not supported by the answer."
+  },
+  {
+    "case_id": "case_03",
+    "question": "Write a Python function is_palindrome(s: str) -> bool that ignores case, spaces, and punctuation. Briefly explain time complexity and include at least one example.",
+    "rubric": "Functional correctness 4; Handling of case/spaces/punctuation 2; Time complexity explanation 2; Clarity/examples/tests 2.",
+    "student_answer": "def is_palindrome(s):\n    s = s.lower().replace(' ', '')\n    return s == s[::-1]\n\nThis handles spaces and case. Complexity is O(n). Example: 'Never odd or even' returns True.",
+    "ta_score": 7,
+    "max_score": 10,
+    "ta_feedback": "Your solution handles spaces and case, but it does not handle punctuation. Complexity explanation is okay and you included an example.",
+    "ground_truth_label": "consistent",
+    "ground_truth_reason": "The code removes spaces and lowercases but does not remove punctuation, so the deduction is aligned with the rubric."
+  },
+  {
+    "case_id": "case_04",
+    "question": "Write a Python function is_palindrome(s: str) -> bool that ignores case, spaces, and punctuation. Briefly explain time complexity and include at least one example.",
+    "rubric": "Functional correctness 4; Handling of case/spaces/punctuation 2; Time complexity explanation 2; Clarity/examples/tests 2.",
+    "student_answer": "def is_palindrome(s):\n    filtered = ''.join(ch.lower() for ch in s if ch.isalnum())\n    return filtered == filtered[::-1]\n\nTime complexity is O(1) because Python string slicing is fast. Example: 'Madam' returns True.",
+    "ta_score": 10,
+    "max_score": 10,
+    "ta_feedback": "Excellent work. Everything is correct, including the complexity analysis.",
+    "ground_truth_label": "inconsistent",
+    "ground_truth_reason": "The algorithm is functionally correct, but the time complexity explanation is incorrect. Full credit should not be awarded under the rubric."
+  },
+  {
+    "case_id": "case_05",
+    "question": "Write a Python function is_palindrome(s: str) -> bool that ignores case, spaces, and punctuation. Briefly explain time complexity and include at least one example.",
+    "rubric": "Functional correctness 4; Handling of case/spaces/punctuation 2; Time complexity explanation 2; Clarity/examples/tests 2.",
+    "student_answer": "def is_palindrome(s):\n    filtered = ''.join(ch.lower() for ch in s if ch.isalnum())\n    return filtered == filtered[::-1]",
+    "ta_score": 8,
+    "max_score": 10,
+    "ta_feedback": "Correct logic overall. I deducted points because the explanation and example are missing.",
+    "ground_truth_label": "consistent",
+    "ground_truth_reason": "The student omitted complexity discussion and an example/test, so an 8/10 is aligned with the rubric."
+  },
+  {
+    "case_id": "case_06",
+    "question": "Write a Python function is_palindrome(s: str) -> bool that ignores case, spaces, and punctuation. Briefly explain time complexity and include at least one example.",
+    "rubric": "Functional correctness 4; Handling of case/spaces/punctuation 2; Time complexity explanation 2; Clarity/examples/tests 2.",
+    "student_answer": "def is_palindrome(s):\n    cleaned = ''.join(ch.lower() for ch in s if ch.isalnum())\n    return cleaned == cleaned[::-1]\n\nThis removes punctuation/spaces and handles uppercase letters. It should be linear time because we process the string once.\n\nExample: 'No lemon, no melon' returns True.",
+    "ta_score": 6,
+    "max_score": 10,
+    "ta_feedback": "The solution may be correct, but it is unclear whether punctuation is handled. The explanation is vague, so I deducted 4 points.",
+    "ground_truth_label": "inconsistent",
+    "ground_truth_reason": "The answer clearly uses isalnum() and lower(), which does handle punctuation and case. A large deduction is not well supported by the evidence."
   }
 ]
